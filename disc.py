@@ -1,8 +1,8 @@
 while True:
     import math
-    a = float(input("Enter a: "))
-    b = float(input("Enter b: "))
-    c = float(input("Enter c: "))
+    a = int(input("Enter a: "))
+    b = int(input("Enter b: "))
+    c = int(input("Enter c: "))
     D = pow(b,2) - (4*(a*c))
     if D < 0:
         print("No sulution D = {}".format(D))
