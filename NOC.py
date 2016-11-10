@@ -1,4 +1,5 @@
 import math
+import re
 from arit import *
 def differ(ls,ls2):
     ls3 = []
@@ -48,8 +49,19 @@ for x in denoms:
         nums.append(int(x))
     else:
         other.append(x)
-
-num = NOC_num(nums)
+num = 1
+if len(nums) > 0:
+    num = NOC_num(nums)
+other = list(set(other))
+other2 = []
+for x in other:
+    match = re.search("[+\-]",x)
+    if match != None:
+        match = "({})".format(x)
+    else:
+        match = x
+    other2.append(match)
+other = other2
 if num != 1:
     other.insert(0,str(num))
 denoms = "".join(other)
