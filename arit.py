@@ -41,4 +41,8 @@ def isInt(check):
 def drb(nm):
     c = len(str(nm)[str(nm).index("."):])-1
     nm = int(nm*pow(10,c))
-    return div(nm,pow(10,c))
+    sign = ""
+    if nm < 0:
+        sign = "-"
+    dv = div(abs(nm),pow(10,c))
+    return sign + dv
