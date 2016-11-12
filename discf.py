@@ -27,7 +27,8 @@ if ch != None:
     gr11 = round(float(ch.group(1)),3)
     gr22 = round(float(ch.group(2)),3)
     print("{}(x{})*(x{})".format(fg,sign(gr11),sign(gr22)))
-    print("({0}x{1})*({0}x{2})".format(fg,sign(gr1),sign(gr2)))
+    print("({0}x{1})*({0}x{2})".format(fg,sign(gr1),sign(gr22)))
+    print("({0}x{1})*({0}x{2})".format(fg,sign(gr11),sign(gr2)))
 else:
     ch = re.search(r"x = ([0-9.\-]+)",res)
     if ch != None:
