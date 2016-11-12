@@ -26,9 +26,13 @@ if ch != None:
     gr2 = round(float(ch.group(2))*a,3)
     gr11 = round(float(ch.group(1)),3)
     gr22 = round(float(ch.group(2)),3)
-    print("{}(x{})*(x{})".format(fg,sign(gr11),sign(gr22)))
-    print("({0}x{1})*(x{2})".format(fg,sign(gr1),sign(gr22)))
-    print("(x{1})*({0}x{2})".format(fg,sign(gr11),sign(gr2)))
+    first = "{}(x{})*(x{})".format(fg,sign(gr11),sign(gr22))
+    second = "({0}x{1})*(x{2})".format(fg,sign(gr1),sign(gr22))
+    last = "(x{1})*({0}x{2})".format(fg,sign(gr11),sign(gr2))
+    ls = [first,second,last]
+    ls = list(set(ls))
+    print("".join(ls))
+    
 else:
     ch = re.search(r"x = ([0-9.\-]+)",res)
     if ch != None:
