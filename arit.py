@@ -1,4 +1,5 @@
 import math
+import re
 def disc(a,b,c):
     a = float(a)
     b = float(b)
@@ -12,7 +13,17 @@ def disc(a,b,c):
     else:
         x1 = (-b + math.sqrt(D))/(2*a)
         x2 = (-b - math.sqrt(D))/(2*a)
-        return "x1 = {}\nx2 = {}".format(x1,x2)  
+        return "x1 = {}\nx2 = {}".format(x1,x2)
+
+def mixnum(num):
+    num = re.search(r"(\d+)/(\d+)",num)
+    up = int(num.group(1))
+    down = int(num.group(2))
+    return "{} {}/{}".format(int(up / down),up % down,down)
+def revmix(num):
+    num = re.search(r"(\d+) (\d+)/(\d+)",num)
+    res = (int(num.group(1))*int(num.group(3)))+int(num.group(2))
+    return "{}/{}".format(res,num.group(3))
 def div(n1,n2):
     def divs(n1,n2):
         n = min(n1,n2)
